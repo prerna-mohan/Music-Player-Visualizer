@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Single Page Application</title>
+  <!-- <link rel="stylesheet" href="./main.css"> -->
+
+</head>
+
+<body>
+  <div class="search_result">
+    <div class="selectionHeader">
+      <div class="container_header selected">All</div>
+      <div class="trackContainer_header">Songs</div>
+      <div class="artistContainer_">Artists</div>
+      <div class="albumContainer_header">Albums</div>
+    </div>
+    <div class="trackContainer">
+    </div>
+    <div class="artistContainer">
+    </div>
+    <div class="albumContainer">
+    </div>
+    <div class="container">
+      <div class="featured">
+        <h2 id="artistHeading_1">Top result</h2>
+        <img id ="artistImg">
+        <p id="artistName"></p>
+        <h3 id="artistHeading_2">Artist</h3>
+      </div>
+      <table class="songs">
+        <tr class="song1">
+          <td><img id="simg1"></img></td>
+          <td id="sinfo1"> <div id="strack1"></div> <div id="salbum1"></div></td>
+          <td id="sduration1"></td>
+          <td id="splay1">P</td>
+          <td id="sheart1">H</td>
+        </tr>
+        <tr class="song2">
+          <td><img id="simg2"></img></td>
+          <td id="sinfo2"> <div id="strack2"></div> <div id="salbum2"></div></td>
+          <td id="sduration2"></td>
+          <td id="splay2">P</td>
+          <td id="sheart2">H</td>
+        </tr>
+        <tr class="song3">
+          <td><img id="simg3"></img></td>
+          <td id="sinfo3"> <div id="strack3"></div> <div id="salbum3"></div></td>
+          <td id="sduration3"></td>
+          <td id="splay3">P</td>
+          <td id="sheart3">H</td>
+        </tr>
+        <tr class="song4">
+          <td><img id="simg4"></img></td>
+          <td id="sinfo4"> <div id="strack4"></div> <div id="salbum4"></div></td>
+          <td id="sduration4"></td>
+          <td id="splay4">P</td>
+          <td id="sheart4">H</td>
+        </tr>
+      </table>
+      <div class="artists1"><img id ="artistImg1"><div id="artistname1"></div></div>
+      <div class="artists2"><img id ="artistImg2"><div id="artistname2"></div></div>
+      <div class="artists3"><img id ="artistImg3"><div id="artistname3"></div></div>
+      <div class="artists4"><img id ="artistImg4"><div id="artistname4"></div></div>
+      <div class="albums1"><img id ="albumImg1"><div id="albumname1"></div></div>
+      <div class="albums2"><img id ="albumImg2"><div id="albumname2"></div></div>
+      <div class="albums3"><img id ="albumImg3"><div id="albumname3"></div></div>
+      <div class="albums4"><img id ="albumImg4"><div id="albumname4"></div></div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="logo">
+      <img src="C:\Users\hp\Downloads\cplogo.png">
+    </div>
+    <div class="search">
+      <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw mOLTJ2mxkzHJj6Y9_na_"
+        viewBox="0 0 24 24" data-encore-id="icon">
+        <path
+          d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+        </path>
+      </svg>
+      <form role="search"><input class="searchbox" maxlength="800" autocorrect="off" autocapitalize="off"
+          spellcheck="false" placeholder="What do you want to listen to?" data-testid="search-input"
+          data-encore-id="type" value="">
+      </form>
+    </div>
+    <div class="menu">
+      <div class="navitem home">
+        <a href="#home">HOME</a>
+      </div>
+      <div class="navitem About">
+        <a href="#about">ABOUT</a>
+      </div>
+    </div>
+  </div>
+  <div id="app">
+    <div class="landing">
+      <div class="section1">
+        <div class="overlay">
+        </div>
+        <div class="carousel carousel_1">
+          <div class="c1 c11"><img src="https://i.scdn.co/image/ab67616d00001e020e3723dac6e7b6c08a553397"></div>
+          <div class="c1 c12"><img src="https://i.scdn.co/image/ab67616d00001e024ab2520c2c77a1d66b9ee21d"></div>
+          <div class="c1 c13"><img src="https://i.scdn.co/image/ab67616d00001e02dd9d1b74357bacedb81ca47b"></div>
+        </div>
+        <div class="carousel carousel_2">
+          <div class="c2 c21"><img src="https://i.scdn.co/image/ab67616100005174836556acb908b5dd89d6fe94"></div>
+          <div class="c2 c22"><img src="https://i.scdn.co/image/ab67616d00001e02239d9cce93779696750c9d5f"></div>
+          <div class="c2 c23"><img src="https://i.scdn.co/image/ab67616d00001e028792c3e96f8ab97a767c5d0c"></div>
+        </div>
+        <div class="carousel carousel_3">
+          <div class="c3 c31"><img width="175px" height="215px"
+              src="https://i.scdn.co/image/ab67616d00001e0291fea0ad00b58cfe3835bf3d"></div>
+          <div class="c3 c32"><img width="175px" height="215px"
+              src="https://i.scdn.co/image/ab67616d00001e02d643cfb8ca82634ea1d78081"></div>
+          <div class="c3 c33"><img width="175px" height="215px"
+              src="https://i.scdn.co/image/ab676161000051742d61844fe406df4144171b71"></div>
+        </div>
+        <div class="carousel carousel_4">
+          <div class="c4 c41"><img width="400px" height="215px"
+              src="https://i.scdn.co/image/ab67616d00001e02896ffcd42561c44fea2bae7b"></div>
+          <div class="c4 c42"><img width="400px" height="215px"
+              src="https://i.scdn.co/image/ab67616d00001e0296b5470621114d01193fa031"></div>
+          <div class="c4 c43"><img width="400px" height="215px"
+              src="https://i.scdn.co/image/ab67616d00001e027dde3b635e6cf355cf305312"></div>
+        </div>
+        <div class="textBox">
+          <div class="groovy">
+            <span class="g">
+              <div class="text-fin">G</div>
+              <div class="text-init">G</div>
+            </span>
+            <span class="r">
+              <div class="text-fin">R</div>
+              <div class="text-init">R</div>
+            </span>
+            <span class="o1">
+              <div class="text-fin">O</div>
+              <div class="text-init">O</div>
+            </span>
+            <span class="o2">
+              <div class="text-fin">O</div>
+              <div class="text-init">O</div>
+            </span>
+            <span class="v">
+              <div class="text-fin">V</div>
+              <div class="text-init">V</div>
+            </span>
+            <span class="y">
+              <div class="text-fin">Y</div>
+              <div class="text-init">Y</div>
+            </span>
+            <span class="dot">
+              <div class="text-fin">.</div>
+              <div class="text-init">.</div>
+            </span>
+          </div>
+        </div>
+        <div class="intro_text">
+          Enjoy variety of music for free here! Start streaming now...
+        </div>
+      </div>
+      <div class="mood_banner">
+        How do you feel today?
+      </div>
+    </div>
+  </div>
+  <!-- <script src="Router/route.js"></script>
+    <script src="Router/router.js"></script>
+    <script src="script.js"></script> -->
+</body>
+
+</html>
