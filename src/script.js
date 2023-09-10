@@ -10,6 +10,21 @@ import Q, { reject, resolve } from 'q';
 (async function () {
     let searchResults = null;
 
+
+    const debounceFunc = (func, delay) => {
+        let timer;
+         return function(...args) {
+            const context = this;
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(context, args);
+            }, delay)
+          }
+     }
+
+    const optimisedSearchHandler = debounceFunc(searchHandler, 500)
+
+
     const selectionHeader = document.querySelector('.selectionHeader').childNodes;
     selectionHeader.forEach((chipItem) => {
         chipItem.addEventListener('click',(e) => {
@@ -47,17 +62,18 @@ import Q, { reject, resolve } from 'q';
 
     const searchInput = document.querySelector('.searchbox');
 
-    searchInput.addEventListener('input', async(e) => {
+    searchInput.addEventListener('keyup', optimisedSearchHandler);
+
+    async function searchHandler(e)
+    {
+        console.log('handle!!!!')
         searchResultSection.style.visibility = 'visible';
-        if (!e.data) {
-            searchData = searchData.slice(0, -1)
-            if (searchData.length == 0) {
-                searchResultSection.style.visibility = 'hidden';
-                return;
-            }
+        if (!e.target.value) {
+            searchResultSection.style.visibility = 'hidden';
+            return;
         }
         else
-            searchData += e.data;
+            searchData = e.target.value;
 
         console.log('fired.. ', searchData);
         const promises = [
@@ -75,7 +91,7 @@ import Q, { reject, resolve } from 'q';
             setArtists(artists.artists.items);
             setAlbums(albums.albums.items);
         },err => {console.log("An error occured.. ", err)}).then(() => {console.log('loaded!!....')});
-    });
+    }
 
     const setSongs = async(tracks) => {
         
@@ -114,7 +130,7 @@ import Q, { reject, resolve } from 'q';
     }
 
     const setAll = async (artistData, trackData, albumData) => {
-        console.log('calling setall ',albumData);
+        // console.log('calling setall ',albumData);
 
         let artistImg = document.getElementById('artistImg');
         artistImg.src = (artistData[0].images.length) ? artistData[0].images[1].url : '';
@@ -146,7 +162,7 @@ import Q, { reject, resolve } from 'q';
             albumname.innerText = album.name;
             albumImg.src = (album.images.length) ? album.images[1].url : '';
         });
-        console.log('done setall');
+        // console.log('done setall');
     }
 
     const artistsInfoString = (artists) => {
